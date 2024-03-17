@@ -2,7 +2,7 @@ package co.edu.uniquindio.barberiavip.test;
 
 import co.edu.uniquindio.barberiavip.modelo.Rol;
 import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioPostDTO;
-import co.edu.uniquindio.barberiavip.servicios.UsuarioServicio;
+import co.edu.uniquindio.barberiavip.servicios.interfaces.UsuarioServicio;
 import jakarta.transaction.Transactional;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

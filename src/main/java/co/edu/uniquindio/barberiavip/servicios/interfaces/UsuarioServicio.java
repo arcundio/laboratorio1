@@ -1,4 +1,4 @@
-package co.edu.uniquindio.barberiavip.servicios;
+package co.edu.uniquindio.barberiavip.servicios.interfaces;
 
 import co.edu.uniquindio.barberiavip.modelo.Usuario;
 import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioGetDTO;

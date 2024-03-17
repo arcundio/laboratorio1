@@ -5,9 +5,10 @@ import co.edu.uniquindio.barberiavip.modelo.Usuario;
 import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioGetDTO;
 import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioPostDTO;
 import co.edu.uniquindio.barberiavip.repositorios.UsuarioRepo;
-import co.edu.uniquindio.barberiavip.servicios.UsuarioServicio;
+import co.edu.uniquindio.barberiavip.servicios.interfaces.UsuarioServicio;
 import co.edu.uniquindio.barberiavip.servicios.excepciones.AttributeException;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,7 +20,7 @@ import java.util.Optional;
 public class UsuarioServicioImpl implements UsuarioServicio {
 
     private final UsuarioRepo usuarioRepo;
-
+    private final PasswordEncoder passwordEncoder;
 
     @Override
     public int registrarUsuario(UsuarioPostDTO u) throws Exception {
@@ -33,7 +34,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         usuario.setApellido(u.getApellido());
         usuario.setEmail(u.getEmail());
         usuario.setTelefono(u.getTelefono());
-        usuario.setPassword(u.getPassword());
+        usuario.setPassword(passwordEncoder.encode(u.getPassword()));
         usuario.setRol(u.getRol());
 
         return usuarioRepo.save(usuario).getId_usuario();
