@@ -28,6 +28,7 @@ public class MetodoPago {
     private String telefono;
 
     @OneToMany(mappedBy = "metodo_pago")
+    @ToString.Exclude
     private List<Pago> pagos;
 
 }

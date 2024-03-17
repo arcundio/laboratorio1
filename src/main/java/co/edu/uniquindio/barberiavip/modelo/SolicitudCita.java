@@ -31,6 +31,7 @@ public class SolicitudCita {
     private Usuario barbero;
 
     @ManyToMany(mappedBy = "citas")
+    @ToString.Exclude
     private List<Servicio> servicios;
 
 

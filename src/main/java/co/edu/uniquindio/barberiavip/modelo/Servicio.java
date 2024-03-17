@@ -23,6 +23,7 @@ public class Servicio {
     private double precio;
 
     @ManyToMany
+    @ToString.Exclude
     private List<SolicitudCita> citas;
 
 }

@@ -26,6 +26,7 @@ public class Curso {
     private Date fecha_fin;
 
     @OneToMany(mappedBy = "curso")
+    @ToString.Exclude
     private List<Inscripcion> inscripciones;
 
 
