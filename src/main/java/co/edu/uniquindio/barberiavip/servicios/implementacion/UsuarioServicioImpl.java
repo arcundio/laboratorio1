@@ -1,4 +1,4 @@
-package co.edu.uniquindio.barberiavip.implementacion;
+package co.edu.uniquindio.barberiavip.servicios.implementacion;
 
 
 import co.edu.uniquindio.barberiavip.modelo.Usuario;
@@ -36,6 +36,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
         usuario.setTelefono(u.getTelefono());
         usuario.setPassword(passwordEncoder.encode(u.getPassword()));
         usuario.setRol(u.getRol());
+        usuario.setActivo(true);
 
         return usuarioRepo.save(usuario).getId_usuario();
     }
@@ -64,8 +65,8 @@ public class UsuarioServicioImpl implements UsuarioServicio {
     }
 
     @Override
-    public int eliminarUsuario(Usuario u) throws Exception {
-        return 0;
+    public void eliminarUsuario(int id_usuario) throws Exception {
+        usuarioRepo.eliminarUsuario(id_usuario);
     }
 
     @Override
@@ -87,6 +88,7 @@ public class UsuarioServicioImpl implements UsuarioServicio {
 
     private UsuarioGetDTO convertir(Usuario usuario) {
         return new UsuarioGetDTO(
+                usuario.isActivo(),
                 usuario.getId_usuario(),
                 usuario.getNombre(),
                 usuario.getApellido(),

@@ -27,6 +27,8 @@ public class Usuario {
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
+    private boolean activo;
+
     @OneToMany(mappedBy = "usuario")
     @ToString.Exclude
     private List<Agenda> agendas;

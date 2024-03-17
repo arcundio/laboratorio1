@@ -20,13 +20,13 @@ public class AuthController {
     private final SesionServicio sesionServicio;
     @PostMapping("/login")
     public ResponseEntity<MensajeDTO> login(@Valid @RequestBody SesionDTO loginUser) {
-        return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO(HttpStatus.OK, false,
+        return ResponseEntity.status(HttpStatus.OK).body( new MensajeDTO<>(HttpStatus.OK, false,
                 sesionServicio.login(loginUser)) );
     }
     @PostMapping("/registro")
     public ResponseEntity<MensajeDTO> registrarCliente(@Valid @RequestBody UsuarioPostDTO usuario) throws Exception {
         usuarioServicio.registrarUsuario(usuario);
-        return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO(HttpStatus.CREATED,
+        return ResponseEntity.status(HttpStatus.CREATED).body(new MensajeDTO<>(HttpStatus.CREATED,
                 false, "Cliente creado correctamente"));
     }
 }

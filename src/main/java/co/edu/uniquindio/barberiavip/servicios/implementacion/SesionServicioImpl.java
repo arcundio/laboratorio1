@@ -1,4 +1,4 @@
-package co.edu.uniquindio.barberiavip.implementacion;
+package co.edu.uniquindio.barberiavip.servicios.implementacion;
 
 import co.edu.uniquindio.barberiavip.modelo.dto.SesionDTO;
 import co.edu.uniquindio.barberiavip.modelo.dto.TokenDTO;
