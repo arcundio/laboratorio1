@@ -31,7 +31,7 @@ public class UsuarioPostDTO {
     @NotBlank
     @Length(max = 50, message = "La contraseña debe tener máximo 50 caracteres")
     private String password;
-    @NotBlank
+
     private Rol rol;
 
 }

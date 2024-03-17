@@ -5,7 +5,6 @@ import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioGetDTO;
 import co.edu.uniquindio.barberiavip.modelo.dto.UsuarioPostDTO;
 
 import java.util.List;
-import java.util.Optional;
 
 public interface UsuarioServicio {
 
