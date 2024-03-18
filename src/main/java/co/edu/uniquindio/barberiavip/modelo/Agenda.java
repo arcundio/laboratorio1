@@ -1,6 +1,7 @@
 package co.edu.uniquindio.barberiavip.modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.time.LocalTime;
@@ -20,10 +21,17 @@ public class Agenda {
 
     @Enumerated(EnumType.STRING)
     private DiaSemana dia;
+
+    @NotNull
     private LocalTime hora_entrada;
+    @NotNull
     private LocalTime hora_salida;
-    @ManyToOne
+
+    @ManyToOne(optional = false)
     private Usuario usuario;
+
+    @NotNull
+    private boolean activo;
 
 
 }

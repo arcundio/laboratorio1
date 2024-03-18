@@ -22,8 +22,7 @@ public class UsuarioServicioTest {
 
     @Test
     public void registrar() throws Exception {
-        UsuarioPostDTO usuarioPostDTO = new UsuarioPostDTO("Juan", "Perez", "32165287887",
-                "julian@mail.com", "ay12", Rol.CLIENTE);
+        UsuarioPostDTO usuarioPostDTO = new UsuarioPostDTO("Juan", "Perez", "32165287887", "julian@mail.com", "ay12", Rol.CLIENTE);
         int nuevo = usuarioServicio.registrarUsuario(usuarioPostDTO);
         System.out.println("id " + nuevo);
         Assertions.assertNotEquals(0, nuevo);

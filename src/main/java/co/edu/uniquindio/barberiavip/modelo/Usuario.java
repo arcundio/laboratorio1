@@ -1,6 +1,8 @@
 package co.edu.uniquindio.barberiavip.modelo;
 
 import jakarta.persistence.*;
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
 import lombok.*;
 
 import java.util.List;
@@ -18,15 +20,23 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id_usuario;
 
+    @NotNull
     private String nombre;
+    @NotNull
     private String apellido;
+    @NotNull
     private String telefono;
+    @NotNull
+    @Email
     private String email;
+    @NotNull
     private String password;
 
+    @NotNull
     @Enumerated(EnumType.STRING)
     private Rol rol;
 
+    @NotNull
     private boolean activo;
 
     @OneToMany(mappedBy = "usuario")
